@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary-color: #1a472a;
-    --secondary-color: #2d7a4a;
-    --accent-color: #ffd700;
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
     --text-dark: #1a1a1a;
     --text-light: #666;
     --bg-light: #f8f9fa;
@@ -165,12 +165,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 30%, #e8f4f8 60%, #d4e9f7 100%);
     background-image: 
-        linear-gradient(135deg, rgba(26, 71, 42, 0.95) 0%, rgba(45, 122, 74, 0.95) 100%),
-        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        radial-gradient(circle at 20% 50%, rgba(52, 152, 219, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 251, 255, 0.9) 30%, rgba(232, 244, 248, 0.9) 60%, rgba(212, 233, 247, 0.9) 100%);
     padding-top: 122px; /* Account for banner + navbar */
     overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -10px 30px rgba(52, 152, 219, 0.05);
 }
 
 .hero-overlay {
@@ -179,14 +181,15 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(52, 152, 219, 0.03) 100%);
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
-    color: var(--white);
+    color: var(--primary-color);
     padding: 2rem 0;
 }
 
@@ -211,14 +214,17 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.95), rgba(93, 173, 226, 0.95));
     backdrop-filter: blur(10px);
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-title {
@@ -226,7 +232,8 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
 }
 
 .highlight {
@@ -238,7 +245,7 @@ body {
 .hero-subtitle {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     margin-bottom: 2.5rem;
-    opacity: 0.95;
+    color: var(--text-light);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -272,25 +279,26 @@ body {
 
 .btn-primary {
     background: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--white);
     border-color: var(--accent-color);
 }
 
 .btn-primary:hover {
-    background: #ffed4e;
+    background: #2980b9;
+    border-color: #2980b9;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border-color: var(--white);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
@@ -306,11 +314,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
     backdrop-filter: blur(10px);
     padding: 1.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .countdown-value {
@@ -325,7 +340,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.5rem;
-    opacity: 0.9;
+    color: var(--text-light);
 }
 
 /* Sections */
@@ -335,8 +350,9 @@ body {
 
 /* Statistics Section */
 .stats-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 30%, #e8f4f8 60%, #d4e9f7 100%);
     padding: 4rem 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .stats-grid {
@@ -348,17 +364,19 @@ body {
 .stat-card {
     text-align: center;
     padding: 2rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white);
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(52, 152, 219, 0.2);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
 }
 
 .stat-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--white);
     border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
 }
 
 .stat-number {
@@ -372,7 +390,7 @@ body {
 .stat-label {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -380,7 +398,7 @@ body {
 
 .stat-detail {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
     font-weight: 500;
 }
 
