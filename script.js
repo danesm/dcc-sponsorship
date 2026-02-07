@@ -142,17 +142,17 @@ function loadPackageImages() {
     
     // Package images from the PDF screenshots
     const packages = [
-        { img: 'images/1.png', title: 'Cover - Sponsorship Packages 2026' },
-        { img: 'images/2.png', title: 'About Dartford Cricket Club' },
-        { img: 'images/3.png', title: 'Sponsorship Overview' },
-        { img: 'images/4.png', title: 'Platinum Package' },
-        { img: 'images/5.png', title: 'Gold Package' },
-        { img: 'images/6.png', title: 'Silver Package' },
-        { img: 'images/7.png', title: 'Bronze Package' },
-        { img: 'images/8.png', title: 'Additional Opportunities' },
-        { img: 'images/9.png', title: 'Benefits Summary' },
-        { img: 'images/10.png', title: 'Partnership Details' },
-        { img: 'images/11.png', title: 'Contact Information' }
+        { img: 'images/1.png', title: 'Page 1' },
+        { img: 'images/2.png', title: 'Page 2' },
+        { img: 'images/3.png', title: 'Page 3' },
+        { img: 'images/4.png', title: 'Page 4' },
+        { img: 'images/5.png', title: 'Page 5' },
+        { img: 'images/6.png', title: 'Page 6' },
+        { img: 'images/7.png', title: 'Page 7' },
+        { img: 'images/8.png', title: 'Page 8' },
+        { img: 'images/9.png', title: 'Page 9' },
+        { img: 'images/10.png', title: 'Page 10' },
+        { img: 'images/11.png', title: 'Page 11' }
     ];
     
     packages.forEach((pkg, index) => {
