@@ -20,6 +20,7 @@
                 <span class="banner-icon">🏏</span>
                 Official Sponsorship Portal for Dartford Cricket Club's 300th Anniversary
                 <a href="https://www.dartfordcc.co.uk" target="_blank" class="banner-link">Visit Club Website →</a>
+                <a href="#donate" class="banner-link banner-donate">💝 Support Us</a>
             </p>
         </div>
     </div>
@@ -40,6 +41,7 @@
                     <li><a href="#packages">Packages</a></li>
                     <li><a href="#benefits">Benefits</a></li>
                     <li><a href="#contact" class="btn-primary">Get in Touch</a></li>
+                    <li><a href="#donate" class="btn-donate-nav">💝 Donate</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <span></span>
@@ -355,6 +357,91 @@
         </div>
     </section>
 
+    <!-- Donation Section -->
+    <section id="donate" class="section donation-section">
+        <div class="container">
+            <div class="donation-wrapper">
+                <div class="donation-content">
+                    <div class="donation-icon">💝</div>
+                    <h2 class="donation-title">Support Our 300th Anniversary</h2>
+                    <p class="donation-subtitle">
+                        Every contribution helps us celebrate our historic milestone and continue nurturing cricket 
+                        excellence in Dartford. Your donation supports youth development, facility improvements, 
+                        and our 300th anniversary celebrations.
+                    </p>
+                    <div class="donation-impact">
+                        <div class="impact-item">
+                            <span class="impact-icon">🏏</span>
+                            <span class="impact-text">Youth Equipment</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🏟️</span>
+                            <span class="impact-text">Facility Upgrades</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🎉</span>
+                            <span class="impact-text">Anniversary Events</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="donation-form-wrapper">
+                    <div class="donation-form-card">
+                        <h3>Make a Donation</h3>
+                        <p class="donation-form-subtitle">Choose your amount</p>
+                        
+                        <form id="donationForm" class="donation-form">
+                            <div class="suggested-amounts">
+                                <button type="button" class="amount-btn" data-amount="10">£10</button>
+                                <button type="button" class="amount-btn" data-amount="25">£25</button>
+                                <button type="button" class="amount-btn" data-amount="50">£50</button>
+                                <button type="button" class="amount-btn" data-amount="100">£100</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customAmount">Or enter custom amount (£)</label>
+                                <div class="amount-input-wrapper">
+                                    <span class="currency-symbol">£</span>
+                                    <input 
+                                        type="number" 
+                                        id="customAmount" 
+                                        name="amount" 
+                                        min="1" 
+                                        step="1" 
+                                        placeholder=""
+                                        required
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="donorName">Name (Optional)</label>
+                                <input type="text" id="donorName" name="donorName" placeholder="Your name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="donorEmail">Email (Optional)</label>
+                                <input type="email" id="donorEmail" name="donorEmail" placeholder="your@email.com">
+                                <small class="form-hint">For donation receipt</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large btn-donate">
+                                <span class="btn-icon">❤️</span>
+                                Donate Now
+                            </button>
+                            
+                            <div id="donationStatus" class="form-status"></div>
+                            
+                            <p class="secure-notice">
+                                🔒 Secure payment powered by Stripe
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -375,6 +462,7 @@
                         <li><a href="https://www.dartfordcc.co.uk/news/" target="_blank">Latest News</a></li>
                         <li><a href="https://www.dartfordcc.co.uk/club" target="_blank">Club Facilities</a></li>
                         <li><a href="#packages">Sponsorship Packages</a></li>
+                        <li><a href="#donate">💝 Make a Donation</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
