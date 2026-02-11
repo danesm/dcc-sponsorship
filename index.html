@@ -372,7 +372,7 @@
                     <div class="donation-impact">
                         <div class="impact-item">
                             <span class="impact-icon">🏏</span>
-                            <span class="impact-text">Youth Equipment</span>
+                            <span class="impact-text">Youth Development</span>
                         </div>
                         <div class="impact-item">
                             <span class="impact-icon">🏟️</span>
@@ -382,6 +382,14 @@
                             <span class="impact-icon">🎉</span>
                             <span class="impact-text">Anniversary Events</span>
                         </div>
+                    </div>
+                    <div class="donation-description">
+                        <h3>Community Programmes</h3>
+                        <p>
+                            Your donations to our Youth Development Community Programmes fund more than just bats and balls. 
+                            They support our qualified coaching staff, outreach to local state schools, and the 'Sunday Development 
+                            Pathway' that keeps over 200 local children active and engaged in the spirit of cricket.
+                        </p>
                     </div>
                 </div>
                 
@@ -408,8 +416,53 @@
                                 <span class="amount-badge">Custom</span>
                             </div>
                         </div>
+
+                        <!-- Gift Aid Opt-in Form -->
+                        <div class="gift-aid-optin">
+                            <div class="gift-aid-checkbox-wrapper">
+                                <input type="checkbox" id="giftAidOptIn" name="giftAidOptIn">
+                                <label for="giftAidOptIn">
+                                    <strong>Yes, I want to add Gift Aid</strong> to make my donation worth 25% more at no extra cost
+                                </label>
+                            </div>
+                            
+                            <div id="giftAidDetails" class="gift-aid-form" style="display: none;">
+                                <p class="gift-aid-form-intro">Please provide your details for Gift Aid:</p>
+                                <div class="form-row">
+                                    <div class="form-group-inline">
+                                        <label for="giftAidName">Full Name *</label>
+                                        <input type="text" id="giftAidName" name="giftAidName" placeholder="John Smith">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group-inline">
+                                        <label for="giftAidEmail">Email *</label>
+                                        <input type="email" id="giftAidEmail" name="giftAidEmail" placeholder="john@example.com">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group-inline">
+                                        <label for="giftAidAddress">Home Address *</label>
+                                        <input type="text" id="giftAidAddress" name="giftAidAddress" placeholder="123 High Street">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group-inline">
+                                        <label for="giftAidPostcode">Postcode *</label>
+                                        <input type="text" id="giftAidPostcode" name="giftAidPostcode" placeholder="DA1 1AA">
+                                    </div>
+                                </div>
+                                <div class="gift-aid-declaration">
+                                    <p><small>
+                                        I confirm I am a UK taxpayer and understand that if I pay less Income Tax and/or 
+                                        Capital Gains Tax than the amount of Gift Aid claimed on all my donations in that 
+                                        tax year, it is my responsibility to pay any difference.
+                                    </small></p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <a href="https://donate.stripe.com/bJe5kC8np8qm06Efc5frW00" class="btn btn-primary btn-large btn-donate-direct">
+                        <a href="https://donate.stripe.com/bJe5kC8np8qm06Efc5frW00" id="donateButton" class="btn btn-primary btn-large btn-donate-direct">
                             <span class="btn-icon">❤️</span>
                             Donate Now
                         </a>
@@ -417,6 +470,28 @@
                         <p class="secure-notice">
                             🔒 Secure payment powered by Stripe
                         </p>
+
+                        <!-- Gift Aid Section -->
+                        <div class="gift-aid-section">
+                            <div class="gift-aid-header">
+                                <span class="gift-aid-icon">🎁</span>
+                                <h4>Maximize Your Impact with Gift Aid</h4>
+                            </div>
+                            <p class="gift-aid-intro">
+                                As a registered Community Amateur Sports Club (CASC), Dartford Cricket Club can claim an 
+                                extra <strong>25p for every £1</strong> you donate—at no extra cost to you.
+                            </p>
+                            <div class="gift-aid-example">
+                                <span class="example-icon">💷</span>
+                                <p>A <strong>£100</strong> donation becomes <strong>£125</strong> once we claim Gift Aid</p>
+                            </div>
+                            <p class="gift-aid-note">
+                                <small>
+                                    If you're a UK taxpayer, simply tick the Gift Aid box above before donating. 
+                                    We'll send your details to the club so they can claim the additional 25%.
+                                </small>
+                            </p>
+                        </div>
 
                         <div class="donation-features">
                             <div class="feature-item">

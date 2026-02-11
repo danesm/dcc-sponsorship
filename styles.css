@@ -865,6 +865,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .impact-item {
@@ -892,6 +893,28 @@ body {
     color: var(--primary-color);
 }
 
+.donation-description {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--accent-color);
+}
+
+.donation-description h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.donation-description p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin: 0;
+}
+
 .donation-form-wrapper {
     display: flex;
     justify-content: center;
@@ -899,7 +922,7 @@ body {
 
 .donation-form-card {
     background: var(--white);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     width: 100%;
@@ -907,7 +930,7 @@ body {
 }
 
 .donation-form-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     text-align: center;
@@ -916,48 +939,48 @@ body {
 .donation-form-subtitle {
     text-align: center;
     color: var(--text-light);
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .donation-info-box {
     background: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%);
     border-left: 4px solid var(--accent-color);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: start;
 }
 
 .info-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
 .info-text {
     color: var(--text-dark);
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .suggested-amounts-display {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .suggested-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-light);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
     font-weight: 600;
 }
 
 .amount-badges {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -965,9 +988,9 @@ body {
 .amount-badge {
     background: var(--bg-light);
     color: var(--accent-color);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     border: 2px solid var(--accent-color);
 }
@@ -1021,6 +1044,174 @@ body {
     font-size: 0.9rem;
     color: var(--text-light);
     margin-top: 1rem;
+}
+
+/* Gift Aid Opt-in Form */
+.gift-aid-optin {
+    background: #f0f9ff;
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.gift-aid-checkbox-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.gift-aid-checkbox-wrapper input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.gift-aid-checkbox-wrapper label {
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.gift-aid-form {
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.gift-aid-form-intro {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    margin-bottom: 0.75rem;
+}
+
+.form-row:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-group-inline {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-inline label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.form-group-inline input {
+    padding: 0.6rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group-inline input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.gift-aid-declaration {
+    background: #fef3c7;
+    border-left: 3px solid #f59e0b;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-top: 0.75rem;
+}
+
+.gift-aid-declaration p {
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+
+/* Gift Aid Section */
+.gift-aid-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0 1.5rem;
+}
+
+.gift-aid-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.gift-aid-icon {
+    font-size: 1.8rem;
+}
+
+.gift-aid-header h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.gift-aid-intro {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.gift-aid-intro strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.gift-aid-example {
+    background: var(--white);
+    border-left: 4px solid #10b981;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.example-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.gift-aid-example p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.gift-aid-example strong {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.gift-aid-note {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
 }
 
 /* Responsive - Donation Section */

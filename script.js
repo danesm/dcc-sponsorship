@@ -180,9 +180,99 @@ window.addEventListener('DOMContentLoaded', function() {
         // Redirect to thank you page
         window.location.href = 'thank-you.html';
     }
-});
+    
+    // Gift Aid Form Toggle
+    const giftAidCheckbox = document.getElementById('giftAidOptIn');
+    const giftAidDetails = document.getElementById('giftAidDetails');
+    const donateButton = document.getElementById('donateButton');
 
-// Intersection Observer for fade-in animations
+    if (giftAidCheckbox) {
+        giftAidCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                giftAidDetails.style.display = 'block';
+            } else {
+                giftAidDetails.style.display = 'none';
+            }
+        });
+    }
+
+    // Handle donation button click with Gift Aid
+    if (donateButton) {
+        donateButton.addEventListener('click', async function(e) {
+            // Check if Gift Aid is opted in
+            if (giftAidCheckbox && giftAidCheckbox.checked) {
+                // Validate Gift Aid form
+                const name = document.getElementById('giftAidName').value.trim();
+                const email = document.getElementById('giftAidEmail').value.trim();
+                const address = document.getElementById('giftAidAddress').value.trim();
+                const postcode = document.getElementById('giftAidPostcode').value.trim();
+                
+                if (!name || !email || !address || !postcode) {
+                    e.preventDefault();
+                    alert('Please complete all Gift Aid fields before proceeding to donate.');
+                    return;
+                }
+                
+                // Send Gift Aid details to club email
+                try {
+                    await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            access_key: '5968b701-72cd-4d10-a45a-ce8b8536b54d',
+                            subject: '🎁 Gift Aid Declaration - Dartford CC Donation (Pending Verification)',
+                            from_name: 'DCC Gift Aid System',
+                            replyto: email,
+                            name: name,
+                            email: email,
+                            address: address,
+                            postcode: postcode,
+                            message: `GIFT AID DECLARATION RECEIVED
+
+⚠️ IMPORTANT: This donor has opted for Gift Aid and is now being redirected to complete their donation via Stripe.
+
+ACTION REQUIRED:
+1. Check your Stripe dashboard to verify if a payment was successfully received from this donor
+2. Match the donor's email (${email}) with the Stripe payment record
+3. Only process Gift Aid claim if payment is confirmed
+
+DONOR DETAILS:
+Name: ${name}
+Email: ${email}
+Address: ${address}
+Postcode: ${postcode}
+
+GIFT AID DECLARATION:
+The donor confirms they are a UK taxpayer and understand that if they pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all their donations in that tax year, it is their responsibility to pay any difference.
+
+---
+This declaration was submitted on: ${new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}
+
+Next Steps:
+- Wait for Stripe payment confirmation
+- Verify payment amount and donor email match
+- If payment confirmed, file this Gift Aid declaration
+- Claim additional 25% from HMRC`
+                        })
+                    });
+                    
+                    // Store in localStorage to show on thank you page
+                    localStorage.setItem('giftAidOptIn', 'true');
+                    localStorage.setItem('giftAidName', name);
+                } catch (error) {
+                    console.error('Error sending Gift Aid details:', error);
+                    // Still allow donation to proceed
+                }
+            }
+            
+            // Allow navigation to Stripe
+            // The link will work normally
+        });
+    }
+});// Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
