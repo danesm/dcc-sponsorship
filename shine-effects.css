@@ -1,0 +1,275 @@
+/* Shine Effects - Modern polish without color changes */
+
+/* Smooth animations for everything */
+* {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add subtle gradient overlays to cards */
+.stat-card,
+.about-card,
+.benefit-card,
+.sponsor-card,
+.package-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before,
+.about-card::before,
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.stat-card:hover::before,
+.about-card:hover::before,
+.benefit-card:hover::before {
+    left: 100%;
+}
+
+/* Enhanced hover effects for cards */
+.stat-card:hover,
+.about-card:hover,
+.benefit-card:hover,
+.sponsor-card:hover,
+.package-slide:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Glowing buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+/* Animated gradient for hero section */
+.hero {
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(52, 152, 219, 0.1) 0%, 
+        transparent 50%, 
+        rgba(52, 152, 219, 0.1) 100%);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+/* Glowing icons */
+.stat-icon,
+.about-icon,
+.benefit-icon {
+    filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.3));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon,
+.about-card:hover .about-icon,
+.benefit-card:hover .benefit-icon {
+    filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.6));
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Smooth image loading with fade */
+img {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Enhanced shadows for sections */
+.section {
+    position: relative;
+}
+
+.packages-section,
+.benefits-section,
+.contact-section,
+.donation-section {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing countdown */
+.countdown-value {
+    text-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(52, 152, 219, 0.5); }
+    50% { text-shadow: 0 0 30px rgba(52, 152, 219, 0.8); }
+}
+
+/* Smooth logo animation */
+.logo-image {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+    filter: drop-shadow(0 4px 12px rgba(52, 152, 219, 0.4));
+    transform: scale(1.05);
+}
+
+/* Animated anniversary badge */
+.anniversary-badge {
+    animation: badgePulse 3s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Glowing social links */
+.social-link {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.social-link svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.social-link:hover svg {
+    filter: drop-shadow(0 4px 8px rgba(52, 152, 219, 0.4));
+}
+
+/* Smooth form inputs */
+input, textarea, select {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    transform: scale(1.01);
+}
+
+/* Sponsor logos with subtle glow */
+.sponsor-card img {
+    filter: grayscale(0%) brightness(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.sponsor-card:hover img {
+    filter: grayscale(0%) brightness(1.1) drop-shadow(0 4px 12px rgba(52, 152, 219, 0.3));
+    transform: scale(1.05);
+}
+
+/* Package slides with depth */
+.package-slide {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.package-slide:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add subtle shine to navigation */
+.navbar {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Glowing urgency banner */
+.urgency-banner {
+    animation: urgencyGlow 2s infinite;
+}
+
+@keyframes urgencyGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(52, 152, 219, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(52, 152, 219, 0.4); }
+}
+
+/* Enhanced footer with subtle gradient */
+.footer {
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.5), transparent);
+}
