@@ -142,19 +142,19 @@ if (contactForm) {
 function loadPackageImages() {
     const packagesContainer = document.getElementById('packagesContainer');
     
-    // Package images from the PDF screenshots
+    // Package images from the PDF screenshots (using WebP for 97% smaller file size)
     const packages = [
-        { img: 'images/1.png', title: 'Page 1' },
-        { img: 'images/2.png', title: 'Page 2' },
-        { img: 'images/3.png', title: 'Page 3' },
-        { img: 'images/4.png', title: 'Page 4' },
-        { img: 'images/5.png', title: 'Page 5' },
-        { img: 'images/6.png', title: 'Page 6' },
-        { img: 'images/7.png', title: 'Page 7' },
-        { img: 'images/8.png', title: 'Page 8' },
-        { img: 'images/9.png', title: 'Page 9' },
-        { img: 'images/10.png', title: 'Page 10' },
-        { img: 'images/11.png', title: 'Page 11' }
+        { img: 'images/1.webp', title: 'Sponsorship Package Overview - Dartford Cricket Club 300th Anniversary' },
+        { img: 'images/2.webp', title: 'Platinum Sponsorship Package - Premium Partnership Opportunities' },
+        { img: 'images/3.webp', title: 'Gold Sponsorship Package - Enhanced Brand Visibility' },
+        { img: 'images/4.webp', title: 'Silver Sponsorship Package - Community Partnership' },
+        { img: 'images/5.webp', title: 'Bronze Sponsorship Package - Supporting Local Cricket' },
+        { img: 'images/6.webp', title: 'Match Day Sponsorship - Event Partnership Options' },
+        { img: 'images/7.webp', title: 'Youth Development Sponsorship - Supporting Future Cricketers' },
+        { img: 'images/8.webp', title: 'Facility Sponsorship - Ground and Equipment Support' },
+        { img: 'images/9.webp', title: 'Digital Sponsorship - Online Brand Presence' },
+        { img: 'images/10.webp', title: 'Anniversary Event Sponsorship - 300th Celebration Partnership' },
+        { img: 'images/11.webp', title: 'Contact Information - Get in Touch About Sponsorship' }
     ];
     
     packages.forEach((pkg, index) => {
@@ -163,7 +163,7 @@ function loadPackageImages() {
         slideDiv.innerHTML = `
             <img src="${pkg.img}" alt="${pkg.title}" loading="lazy" onerror="this.style.display='none'">
             <div class="package-info">
-                <h3>${pkg.title}</h3>
+                <h3>Page ${index + 1}</h3>
             </div>
         `;
         packagesContainer.appendChild(slideDiv);
@@ -173,6 +173,50 @@ function loadPackageImages() {
 // Load images when DOM is ready
 document.addEventListener('DOMContentLoaded', loadPackageImages);
 
+// Load and display donation progress - DISABLED FOR NOW
+// async function loadDonationProgress() {
+//     try {
+//         const response = await fetch('donation-progress.json');
+//         const data = await response.json();
+//         
+//         // Update amounts
+//         document.getElementById('currentAmount').textContent = data.current.toLocaleString();
+//         document.getElementById('targetAmount').textContent = data.target.toLocaleString();
+//         document.getElementById('donorCount').textContent = data.donorCount;
+//         document.getElementById('lastUpdated').textContent = data.lastUpdated;
+//         
+//         // Calculate percentage
+//         const percentage = Math.min((data.current / data.target) * 100, 100);
+//         const progressBar = document.getElementById('progressBar');
+//         const progressPercentage = document.getElementById('progressPercentage');
+//         
+//         // Animate progress bar
+//         setTimeout(() => {
+//             progressBar.style.width = percentage + '%';
+//             progressPercentage.textContent = Math.round(percentage) + '%';
+//         }, 100);
+//         
+//         // Check for milestone messages
+//         const milestoneMessage = document.getElementById('milestoneMessage');
+//         const reachedMilestone = data.milestones.find(m => 
+//             data.current >= m.amount && data.current < m.amount + 500
+//         );
+//         
+//         if (reachedMilestone) {
+//             milestoneMessage.textContent = reachedMilestone.message;
+//             milestoneMessage.style.display = 'block';
+//         }
+//         
+//     } catch (error) {
+//         console.error('Error loading donation progress:', error);
+//         // Set default values if file not found
+//         document.getElementById('currentAmount').textContent = '0';
+//         document.getElementById('targetAmount').textContent = '10,000';
+//         document.getElementById('donorCount').textContent = '0';
+//         document.getElementById('lastUpdated').textContent = 'Today';
+//     }
+// }
+
 // Check for donation success on page load
 window.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -180,6 +224,9 @@ window.addEventListener('DOMContentLoaded', function() {
         // Redirect to thank you page
         window.location.href = 'thank-you.html';
     }
+    
+    // Load donation progress - DISABLED FOR NOW
+    // loadDonationProgress();
     
     // Gift Aid Form Toggle
     const giftAidCheckbox = document.getElementById('giftAidOptIn');
