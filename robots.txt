@@ -1,0 +1,9 @@
+# Robots.txt for Dartford Cricket Club Sponsorship Site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dcc-sponsorship.co.uk/sitemap.xml
+
+# Disallow admin/api endpoints if any
+Disallow: /api/
