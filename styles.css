@@ -1806,6 +1806,39 @@ body {
     opacity: 0.8;
 }
 
+.watermark {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    font-style: italic;
+}
+
+.watermark a {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.watermark a:hover {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+}
+
+.watermark .heart {
+    color: rgba(255, 100, 100, 0.4);
+    display: inline-block;
+    font-size: 0.6rem;
+    font-style: normal;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .top-banner {
