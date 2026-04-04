@@ -30,7 +30,7 @@ const navLinks = document.querySelector('.nav-links');
 
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        navLinks.classList.toggle('active');
         mobileMenuBtn.classList.toggle('active');
     });
 }
@@ -50,7 +50,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             // Close mobile menu if open
             if (window.innerWidth <= 768) {
-                navLinks.style.display = 'none';
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
             }
         }
     });
