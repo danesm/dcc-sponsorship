@@ -736,6 +736,7 @@ body {
     min-height: 120px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    position: relative;
 }
 
 .sponsor-card:hover {
@@ -748,6 +749,38 @@ body {
     max-width: 100%;
     max-height: 80px;
     object-fit: contain;
+}
+
+.sponsor-card .sponsor-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.sponsor-card:hover .sponsor-overlay {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.sponsor-overlay a {
+    color: #fff;
+    background: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.sponsor-overlay a:hover {
+    background: var(--primary-color);
 }
 
 .sponsor-placeholder {
